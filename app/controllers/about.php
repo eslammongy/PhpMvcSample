@@ -4,7 +4,7 @@ class About extends Controller{
 
     function index(){
          $data['page_title'] = "About";
-        $this->getView("about");
+        $this->getView("Minimalista/about-us", $data);
     }
 
 }
