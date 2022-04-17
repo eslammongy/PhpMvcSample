@@ -39,6 +39,26 @@ class Database{
 
     public function write($query, $data = []){
 
+         $db = $this->db_connect();
+        $statement = $db->prepare($query);
+        if(count($data) == 0){
+            $statement = $db->query($query);
+            $checkExc = 0;
+            if($statement){
+                $checkExc = 1;
+            }
+        }else{
+            $checkExc = $statement->execute($data);
+        }
+    
+
+        if($checkExc){
+            return true;
+        }else{
+            return false;
+        }
+
+
     }
 
 }

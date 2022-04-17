@@ -3,7 +3,7 @@
 class Controller{
 
     
-    protected function getView($view){
+    protected function getView($view, $data = []){
           if(file_exists("../app/views/". $view .".php")){
               include "../app/views/". $view .".php" ;
        }else{
