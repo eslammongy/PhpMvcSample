@@ -15,9 +15,12 @@ class User
 
             if (is_array($data)) {
                 // printed user logged in
-                $_SESSION['user_id'] = $data[0]->userid;
+                $_SESSION['id'] = $data[0]->id;
                 $_SESSION['user_name'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
+
+                header("Location:" . ROOT . "home");
+                die;
             } else {
                 $_SESSION['error'] = "wrong username and password";
             }
@@ -37,7 +40,7 @@ class User
             $arr['username'] = $POST['username'];
             $arr['password'] = $POST['password'];
             $arr['email'] = $POST['email'];
-            $arr['url_address'] = "21130";
+            $arr['url_address'] = getRandomStrinMAx(60);
             $arr['date'] = date("Y-m-d H:i:s");
 
             $query = "insert into users (username,password,email,url_address,date) values (:username,:password,:email,:url_address,:date)";
@@ -63,7 +66,7 @@ class User
 
             if (is_array($data)) {
                 // printed user logged in
-                $_SESSION['user_id'] = $data[0]->userid;
+                $_SESSION['id'] = $data[0]->id;
                 $_SESSION['user_name'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
 

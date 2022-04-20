@@ -7,6 +7,11 @@
     margin: auto;
 }
 
+.login-page p {
+    text-align: center;
+    color: red;
+}
+
 .form {
     position: relative;
     z-index: 1;
@@ -124,8 +129,10 @@ body {
 
 
 <div class="login-page">
-    <p><?php #check_message() 
-      ?></p>
+    <p>
+        <?php checkErrorMsg();
+        ?>
+    </p>
     <div class="form">
         <form class="register-form" method="post">
             <input type="text" name="username" placeholder="name" />

@@ -125,7 +125,7 @@ body {
 <?php $this->getView("Minimalista/header", $data); ?>
 
 <div class="login-page">
-    <p><?php #check_message() 
+    <p><?php checkErrorMsg();
         ?></p>
     <div class="form">
         <!-- <h2>Sign up</h2> -->

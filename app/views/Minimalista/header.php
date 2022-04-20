@@ -36,6 +36,13 @@
                         <img class="logo-after" src="<?php echo ASSETS ?>template/img/logo-dark.png" alt="">
                     </a>
                 </div>
+                <?php
+                if (isset($_SESSION['user_name'])) {
+                    echo "Hi " . $_SESSION['user_name'] . "";
+                } else {
+                    echo "Hi user";
+                }
+                ?>
                 <div class="s-12 l-10">
                     <div class="top-nav right">
                         <p class="nav-text"></p>
@@ -44,8 +51,18 @@
                             <li><a href="<?php echo ROOT ?>about">About Us</a></li>
                             <li><a href="<?php echo ROOT ?>contact">Contact</a></li>
 
+                            <?php
+                            if (!isset($_SESSION['user_name'])) {
+                            ?>
                             <li><a href="<?php echo ROOT ?>login">Login</a></li>
                             <li><a href="<?php echo ROOT ?>signup">Sign up</a></li>
+                            <?php
+                            } else {
+                            ?>
+                            <li><a href="<?php echo ROOT ?>logout">Sign Out</a></li>
+
+                            <?php } ?>
+
                             <li><a href="<?php echo ROOT ?>upload">Upload</a></li>
                         </ul>
                     </div>
