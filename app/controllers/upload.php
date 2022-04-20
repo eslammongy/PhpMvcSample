@@ -18,6 +18,11 @@ class Upload extends Controller
             header("Location:" . ROOT . "login");
             die;
         }
+
+        if (isset($_POST['title']) && isset($_FILES['file'])) {
+            $uploader = $this->loadModel('upload_file');
+            $uploader->uploadFile($_POST, $_FILES);
+        }
         $data['page_title'] = "Upload";
         $this->getView("Minimalista/upload", $data);
     }
