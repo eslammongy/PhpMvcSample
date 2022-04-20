@@ -20,9 +20,9 @@
 
 <body class="size-1140">
     <!-- PREMIUM FEATURES BUTTON -->
-    <a target="_blank" class="hide-s" href="../template/minimalista-premium-responsive-business-template/"
+    <!--  <a target="_blank" class="hide-s" href="../template/minimalista-premium-responsive-business-template/"
         style="position:fixed;top:120px;right:-14px;z-index:10;"><img
-            src="<?php echo ASSETS ?>template/img/premium-features.png" alt=""></a>
+            src="<?php echo ASSETS ?>template/img/premium-features.png" alt=""></a> -->
     <div id="page-wrapper">
         <!-- HEADER -->
         <header role="banner" class="position-absolute margin-top-30 margin-m-top-0 margin-s-top-0">
@@ -60,10 +60,9 @@
                             } else {
                             ?>
                             <li><a href="<?php echo ROOT ?>logout">Sign Out</a></li>
+                            <li><a href="<?php echo ROOT ?>upload">Upload</a></li>
 
                             <?php } ?>
-
-                            <li><a href="<?php echo ROOT ?>upload">Upload</a></li>
                         </ul>
                     </div>
                 </div>

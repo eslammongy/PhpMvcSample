@@ -76,4 +76,14 @@ class User
 
         return false;
     }
+
+    function logout()
+    {
+        unset($_SESSION['id']);
+        unset($_SESSION['user_name']);
+        unset($_SESSION['user_url']);
+
+        header("Location:" . ROOT . "login");
+        die;
+    }
 }
