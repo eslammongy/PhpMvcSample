@@ -18,6 +18,8 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+
+
 .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -124,8 +126,9 @@ body {
 
 <div class="login-page">
     <p><?php #check_message() 
-      ?></p>
+        ?></p>
     <div class="form">
+        <!-- <h2>Sign up</h2> -->
         <form class="register-form" method="post">
             <input type="text" name="username" placeholder="name" />
             <input type="password" name="password" placeholder="password" />

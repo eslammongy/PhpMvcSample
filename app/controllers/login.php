@@ -7,6 +7,13 @@ class Login extends Controller
     {
 
         $data['page_title'] = "Login";
+        if (isset($_POST['email'])) {
+            $user = $this->loadModel("user");
+            $user->signUp($_POST);
+        } elseif (isset($_POST['username']) && !isset($_POST['email'])) {
+            $user = $this->loadModel("user");
+            $user->login($_POST);
+        }
         $this->getView("Minimalista/login", $data);
     }
 }
