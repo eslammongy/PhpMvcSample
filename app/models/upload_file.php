@@ -1,9 +1,9 @@
 <?php
 
-class UploadFile
+class Upload_file
 {
 
-    function uploadFile($POST, $FILES)
+    function uploadImage($POST, $FILES)
     {
         $db = new Database();
         $_SESSION['error'] == "";
@@ -12,7 +12,7 @@ class UploadFile
             if ($FILES['file']['name'] != "" && $FILES['file']['error'] == 0) {
                 $folder = "uploads/";
                 if (!file_exists($folder)) {
-                    mkdir($folder, 880, true);
+                    mkdir($folder, 0777, true);
                 }
                 $destination = $folder . $FILES['file']['name'];
                 move_uploaded_file($FILES['file']['tmp_name'], $destination);
@@ -23,11 +23,11 @@ class UploadFile
             if ($_SESSION['error'] == "") {
                 $arr['title'] = $POST['title'];
                 $arr['description'] = $POST['description'];
-                $arr['url_address'] = getRandomStrinMAx(60);
                 $arr['image'] = $destination;
+                $arr['url_address'] = getRandomStrinMAx(60);
                 $arr['date'] = date("Y-m-d H:i:s");
 
-                $query = "insert into images (url_address,image,date,description,title) values (:url_address,:image,:date,:description,:tile)";
+                $query = "insert into images (title,description,url_address,date,image) values (:title,:description,:url_address,:date,:image)";
                 $data = $db->write($query, $arr);
                 if ($data) {
 

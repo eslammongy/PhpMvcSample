@@ -20,7 +20,7 @@
                     <p class="subject-error form-error">Please enter the title.</p>
                 </div>
                 <div class="s-12">
-                    <input name="image" class="image" placeholder="image" title="Image" type="file">
+                    <input name="file" class="subject" type="file" required>
                     <p class="subject-error form-error">Please upload the image.</p>
                 </div>
                 <div class="s-12">
