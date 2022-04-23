@@ -35,7 +35,17 @@
             <?php endif; ?>
 
         </div>
+        <br>
+        <section>
+            <a href="<?= $data['prev_page'] ?>"><input class="s-12 submit-form button background-primary text-white"
+                    type="text" style="float: left;width: 180px;" type="submit" value="Prev"></a>
+            <a href="<?= $data['next_page'] ?>"> <input class="s-12 submit-form button background-primary text-white"
+                    style="float: right;width: 180px;" type="text" width="180px" type="submit" value="Next"></a>
+            <br>
+        </section>
+
     </article>
+    <br>
 </main>
 
 <!-- FOOTER -->

@@ -4,7 +4,12 @@ class Post
 
     function getAllPosts()
     {
-        $query = "select * from images order by id desc limit 12";
+
+        $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $pageNum = $pageNum < 1 ? 1 : $pageNum;
+        $limit = 1;
+        $offset = ($pageNum - 1) * $limit;
+        $query = "select * from images order by id desc limit $limit offset $offset";
 
         $db = new Database();
         $posts = $db->read($query);
