@@ -14,4 +14,19 @@ class Post
 
         return false;
     }
+
+    function getSinglePost($link)
+    {
+        $DB = new Database();
+        $arr['link'] = $link;
+        $query = "select * from images where url_address = :link limit 1";
+
+        $data = $DB->read($query, $arr);
+        if (is_array($data)) {
+
+            return $data[0];
+        }
+
+        return false;
+    }
 }
